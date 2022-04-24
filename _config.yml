@@ -12,9 +12,9 @@ header:
  title: "Photography"
  subtitle: "by Spencer Seale"
 footer:
- name: "My name is Spencer."
- bio: "I am a Computational Biologist, but was once also a film major. This website serves to catalogue and share what is my a hobby."
- github: "This website's template was forked from an open source contributor @ <a href=\"https://github.com/ramswaroop/photography\">forked on github</a>"
+ name: "Welcome, I'm Spencer."
+ bio: "Currently developing bioinformatics software tools as a Computational Biologist, but was once also a film major. This website serves to catalogue and share what is now simply a hobby. Find me exploring and residing in Montana's outdoor playground - Whitefish, MT."
+ github: "This website's template was forked from an open source contributor <a href=\"https://github.com/ramswaroop/photography\">on github</a>"
 web_design: "AJ"
 social_urls:
   linkedin: "https://www.linkedin.com/in/spencerseale"
