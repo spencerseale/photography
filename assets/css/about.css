@@ -1,0 +1,306 @@
+/* About Page Styles */
+.about-page {
+    background: #1a1a1a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#about-main {
+    flex: 1;
+    padding: 6rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    position: relative;
+    top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-button:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tab-button.active {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Tab Content */
+.tab-content {
+    min-height: 400px;
+}
+
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-panel h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+.tab-panel h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.tab-panel p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Social Section */
+.social-section {
+    margin-top: 3rem;
+}
+
+.social-section .icons {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-section .icons li a {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.social-section .icons li a:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Resume Section */
+.resume-section {
+    margin-top: 2rem;
+}
+
+.resume-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-item:last-child {
+    border-bottom: none;
+}
+
+.resume-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.resume-item .resume-meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.skills-list li {
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Resume PDF Container */
+.resume-pdf-container {
+    margin-top: 2rem;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.resume-actions .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid white;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.resume-actions .button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.resume-actions .button.special {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.resume-actions .button.special:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Resume PDF Viewer */
+.resume-pdf-viewer {
+    width: 100%;
+    height: 800px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.resume-pdf-viewer embed {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer */
+#about-footer {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 4rem;
+}
+
+#about-footer p {
+    margin: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+#about-footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+#about-footer a:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media screen and (max-width: 736px) {
+    #about-main {
+        padding: 4rem 1rem 2rem;
+    }
+    
+    .about-container {
+        padding: 1rem;
+    }
+    
+    .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .tab-panel h2 {
+        font-size: 1.8rem;
+    }
+    
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .resume-actions .button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .resume-pdf-viewer {
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .resume-pdf-viewer {
+        height: 500px;
+    }
+}
+

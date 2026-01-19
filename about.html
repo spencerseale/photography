@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+<!-- Wrapper -->
+<div id="wrapper" class="about-page">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Photography</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div id="about-main">
+        <div class="about-container">
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="overview">Overview</button>
+                <button class="tab-button" data-tab="resume">Resume</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Overview Tab -->
+                <div id="overview" class="tab-panel active">
+                    <h2>{{ site.footer.name }}</h2>
+                    <p>{{ site.footer.bio }}</p>
+
+                    <section class="social-section">
+                        <h3>Find me at...</h3>
+                        <ul class="icons">
+                            {% if site.social_urls.linkedin %}
+                                <li>
+                                    <a href="{{ site.social_urls.linkedin }}" class="icon fa-linkedin" target="_blank">
+                                        <span class="label">LinkedIn</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if site.social_urls.flickr %}
+                                <li>
+                                    <a href="{{ site.social_urls.flickr }}" class="icon fa-flickr" target="_blank">
+                                        <span class="label">Flickr</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if site.social_urls.github %}
+                                <li>
+                                    <a href="{{ site.social_urls.github }}" class="icon fa-github" target="_blank">
+                                        <span class="label">GitHub</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Resume Tab -->
+                <div id="resume" class="tab-panel">
+                    <h2>Resume</h2>
+                    
+                    {% assign resume_file = null %}
+                    {% for file in site.static_files %}
+                        {% if file.path contains 'aboutme' and file.extname == '.pdf' %}
+                            {% assign resume_file = file %}
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% if resume_file %}
+                    <div class="resume-pdf-container">
+                        <div class="resume-actions">
+                            <a href="{{ site.baseurl }}{{ resume_file.path }}" class="button special" target="_blank">
+                                <i class="fa fa-external-link"></i> Open in New Tab
+                            </a>
+                            <a href="{{ site.baseurl }}{{ resume_file.path }}" class="button" download>
+                                <i class="fa fa-download"></i> Download PDF
+                            </a>
+                        </div>
+                        <div class="resume-pdf-viewer">
+                            <embed src="{{ site.baseurl }}{{ resume_file.path }}" type="application/pdf" />
+                        </div>
+                    </div>
+                    {% else %}
+                    <p>Resume not available. Please add a PDF file to the aboutme directory.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="about-footer">
+        <p class="copyright">
+            &copy; {{ site.author }}
+        </p>
+    </footer>
+</div>
+

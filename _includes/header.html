@@ -4,6 +4,15 @@
 <!--[if lte IE 8]>
 <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 <link rel="stylesheet" href="assets/css/main.min.css"/>
+{% if page.url == "/" or page.url == "/index.html" %}
+<link rel="stylesheet" href="assets/css/slideshow.css"/>
+{% endif %}
+{% if page.url == "/gallery.html" %}
+<link rel="stylesheet" href="assets/css/gallery.css"/>
+{% endif %}
+{% if page.url == "/about.html" %}
+<link rel="stylesheet" href="assets/css/about.css"/>
+{% endif %}
 <!--[if lte IE 9]>
 <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
 <!--[if lte IE 8]>
