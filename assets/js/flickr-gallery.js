@@ -1,6 +1,15 @@
 /* Flickr Gallery Integration */
 (function($) {
     $(function() {
+        // Initialize breakpoints
+        breakpoints({
+            xlarge: ["1281px", "1680px"],
+            large: ["981px", "1280px"],
+            medium: ["737px", "980px"],
+            small: ["481px", "736px"],
+            xsmall: [null, "480px"],
+        });
+        
         var $main = $("#main");
         var flickrUserId = $main.data("flickr-user-id");
         
@@ -65,8 +74,8 @@
                     $image.css("background-image", "url(" + $image_img.attr("src") + ")");
                     $image_img.hide();
                     
-                    // IE<11 compatibility
-                    if (skel.vars.IEVersion < 11) {
+                    // IE compatibility
+                    if (browser.name == "ie") {
                         $article
                             .css("cursor", "pointer")
                             .on("click", function() {
@@ -93,7 +102,7 @@
                     
                     var caption = "";
                     if (flickrLink) {
-                        caption += "<p class='flickr-photo-link'><a href='" + flickrLink + "' target='_blank' rel='noopener noreferrer'><i class='fa fa-flickr'></i> View on Flickr</a></p>";
+                        caption += "<p class='flickr-photo-link'><a href='" + flickrLink + "' target='_blank' rel='noopener noreferrer'><i class='icon brands fa-flickr'></i> View on Flickr</a></p>";
                     }
                     return caption || " ";
                 },
@@ -121,13 +130,13 @@
             });
             
             // Hack: Set margins to 0 when "xsmall" activates.
-            skel
-                .on("-xsmall", function() {
-                    $main[0]._poptrox.windowMargin = 50;
-                })
-                .on("+xsmall", function() {
-                    $main[0]._poptrox.windowMargin = 0;
-                });
+            breakpoints.on("<=xsmall", function() {
+                $main[0]._poptrox.windowMargin = 0;
+            });
+            
+            breakpoints.on(">xsmall", function() {
+                $main[0]._poptrox.windowMargin = 50;
+            });
         }
     });
 })(jQuery);
